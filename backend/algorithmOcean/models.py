@@ -1,6 +1,15 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser #new
 
 # Create your models here.
+class CustomUser(AbstractUser): #new
+    ACCOUNT_TYPE = [('1', 'Student'), ('2', 'Teacher')]
+    accountType = models.CharField(max_length=1, choices=ACCOUNT_TYPE, default='1')
+    classCode = models.CharField(max_length=30, blank=True)
+    # Any extra fields would go here
+    def __str__(self):
+        return self.email
+
 class Account(models.Model):
   ACCOUNT_TYPE = [('1', 'Student'), ('2', 'Teacher')]
   firstname = models.CharField(max_length=30)
@@ -12,8 +21,8 @@ class Account(models.Model):
   #  = models.TextField()
   # completed = models.BooleanField(default=False)
 
-  def _str_(self):
-    return self.email
+  #def _str_(self):
+  #  return self.email
 
 class Practice(models.Model):
   TYPE = [('1', 'Lesson'), ('2', 'Quiz')]

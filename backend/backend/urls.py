@@ -20,6 +20,7 @@ from algorithmOcean import views
 
 router = routers.DefaultRouter()
 router.register(r'accounts', views.Account, 'Account')
+router.register(r'customusers', views.CustomUser, 'CustomUser') #new
 
 urlpatterns = [
     path('admin/', admin.site.urls),
