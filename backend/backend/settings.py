@@ -133,7 +133,13 @@ CORS_ORIGIN_WHITELIST = [
      'https://stormy-sierra-07970.herokuapp.com'
 ]
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost:3000', 'http://localhost', 'https://localhost:3000', 'http://10.0.0.202:3000', 'https://stormy-sierra-07970.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:3000', 
+    'http://localhost', 
+    'https://localhost:3000', 
+    'http://10.0.0.202:3000', 
+    'https://stormy-sierra-07970.herokuapp.com'
+]
 
 AUTH_USER_MODEL = 'algorithmOcean.CustomUser' #new
 
@@ -144,16 +150,33 @@ CORS_ALLOW_METHODS = ['GET', 'POST', 'PUT']
 
 CORS_ALLOW_HEADERS = ['Accept', 'Accept-Language', 'Authorization', 'Content-Type', 'X-CSRFToken']
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 'http://localhost', 'https://localhost:3000', 'http://10.0.0.202:3000', 'https://stormy-sierra-07970.herokuapp.com']
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000', 
+    'http://localhost', 
+    'https://localhost:3000', 
+    'http://10.0.0.202:3000', 
+    'https://stormy-sierra-07970.herokuapp.com'
+]
 
 CORS_ALLOW_CREDENTIALS = True
 
 #CSRF_HEADER_NAME = 'X-CSRFToken'
 CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
 
-CSRF_COOKIE_DOMAIN = ['http://localhost:3000', 'http://localhost:8000', '10.0.0.202:3000', '10.0.0.202', 'localhost:3000', 'localhost', 'https://localhost:3000', 'http://10.0.0.202:3000', 'https://stormy-sierra-07970.herokuapp.com', 'https://localhost:3000/login']
+CSRF_COOKIE_DOMAIN = [
+    'http://localhost:3000', 
+    'http://localhost:8000', 
+    '10.0.0.202:3000', 
+    '10.0.0.202', 
+    'localhost:3000', 
+    'localhost', 
+    'https://localhost:3000', 
+    'http://10.0.0.202:3000', 
+    'https://stormy-sierra-07970.herokuapp.com', 
+    'https://localhost:3000/login'
+]
 
 CSRF_COOKIE_HTTPONLY = False
 CSRF_COOKIE_SECURE = False
-
+#CSRF_COOKIE_SAMESITE = 'None'
 #LOGIN_REDIRECT_URL = "/"
