@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 DEBUG = True
 #DEBUG = False
 
-ALLOWED_HOSTS = ['https://algorithmoceanbackend.herokuapp.com/', 'algorithmoceanbackend.herokuapp.com']
+ALLOWED_HOSTS = ['https://algorithmoceanbackend.herokuapp.com/', 'algorithmoceanbackend.herokuapp.com', 'localhost:8000', 'http://localhost:8000/']
 
 
 # Application definition
@@ -135,7 +135,7 @@ CORS_ORIGIN_WHITELIST = [
      'http://10.0.0.202:3000',
      'https://stormy-sierra-07970.herokuapp.com',
      'https://algorithmoceanbackend.herokuapp.com/',
-     'algorithmoceanbackend.herokuapp.com'
+     #'algorithmoceanbackend.herokuapp.com'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -145,7 +145,7 @@ CSRF_TRUSTED_ORIGINS = [
     'http://10.0.0.202:3000', 
     'https://stormy-sierra-07970.herokuapp.com',
     'https://algorithmoceanbackend.herokuapp.com/',
-    'algorithmoceanbackend.herokuapp.com'
+    #'algorithmoceanbackend.herokuapp.com'
 ]
 
 AUTH_USER_MODEL = 'algorithmOcean.CustomUser' #new
@@ -163,8 +163,8 @@ CORS_ALLOWED_ORIGINS = [
     'https://localhost:3000', 
     'http://10.0.0.202:3000', 
     'https://stormy-sierra-07970.herokuapp.com',
-    'https://algorithmoceanbackend.herokuapp.com/',
-    'algorithmoceanbackend.herokuapp.com'
+    'https://algorithmoceanbackend.herokuapp.com'#,
+    #'algorithmoceanbackend.herokuapp.com'
 ]
 
 CORS_ALLOW_CREDENTIALS = True
