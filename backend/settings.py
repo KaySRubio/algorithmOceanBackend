@@ -172,20 +172,21 @@ CORS_ALLOW_CREDENTIALS = True
 #CSRF_HEADER_NAME = 'X-CSRFToken'
 CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
 
-CSRF_COOKIE_DOMAIN = [
-    'http://localhost:3000', 
-    'http://localhost:8000', 
-    '10.0.0.202:3000', 
-    '10.0.0.202', 
-    'localhost:3000', 
-    'localhost', 
-    'https://localhost:3000', 
-    'http://10.0.0.202:3000', 
-    'https://stormy-sierra-07970.herokuapp.com', 
-    'https://localhost:3000/login',
-    'https://algorithmoceanbackend.herokuapp.com/',
-    'algorithmoceanbackend.herokuapp.com'
-]
+#CSRF_COOKIE_DOMAIN = [
+#    'http://localhost:3000', 
+#    'http://localhost:8000', 
+#    '10.0.0.202:3000', 
+#    '10.0.0.202', 
+#    'localhost:3000', 
+#    'localhost', 
+#    'https://localhost:3000', 
+#    'http://10.0.0.202:3000', 
+#    'https://stormy-sierra-07970.herokuapp.com', 
+#    'https://localhost:3000/login',
+#    'https://algorithmoceanbackend.herokuapp.com/',
+#    'algorithmoceanbackend.herokuapp.com',
+#    '.herokuapp.com'
+#]
 
 CSRF_COOKIE_HTTPONLY = False
 #CSRF_COOKIE_SECURE = False
