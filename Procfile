@@ -1,2 +1,1 @@
-web: gunicorn myproject.wsgi
-web: gunicorn backend:app
+web: gunicorn algorithmoceanbackend.wsgi
