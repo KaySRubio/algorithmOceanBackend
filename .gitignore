@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Kay - added this because heroku returns error with gunicorn when pipfile is present
+Pipfile
