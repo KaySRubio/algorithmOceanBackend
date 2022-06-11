@@ -61,6 +61,6 @@ def help(request):
 
 def db(request):
     customUser = CustomUser()
-    customUser.save()
-    customUsers = CustomUser.objects.all()
-    return render(request, "db.html", {"customUsers": customUsers})
+    # customUser.save()
+    # customUsers = CustomUser.objects.all()
+    return render(request, "db.html", {"customUsers": customUser})
