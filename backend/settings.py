@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+# Configure Django App for Heroku
+import django_heroku
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -195,3 +198,6 @@ CSRF_COOKIE_SAMESITE = 'None'
 #LOGIN_REDIRECT_URL = "/"
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Configure Django App for Heroku
+django_heroku.settings(locals())
