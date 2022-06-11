@@ -133,7 +133,9 @@ CORS_ORIGIN_WHITELIST = [
      'http://localhost:3000',
      'https://localhost:3000',
      'http://10.0.0.202:3000',
-     'https://stormy-sierra-07970.herokuapp.com'
+     'https://stormy-sierra-07970.herokuapp.com',
+     'https://algorithmoceanbackend.herokuapp.com/',
+     'algorithmoceanbackend.herokuapp.com'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -141,7 +143,9 @@ CSRF_TRUSTED_ORIGINS = [
     'http://localhost', 
     'https://localhost:3000', 
     'http://10.0.0.202:3000', 
-    'https://stormy-sierra-07970.herokuapp.com'
+    'https://stormy-sierra-07970.herokuapp.com',
+    'https://algorithmoceanbackend.herokuapp.com/',
+    'algorithmoceanbackend.herokuapp.com'
 ]
 
 AUTH_USER_MODEL = 'algorithmOcean.CustomUser' #new
@@ -158,7 +162,9 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost', 
     'https://localhost:3000', 
     'http://10.0.0.202:3000', 
-    'https://stormy-sierra-07970.herokuapp.com'
+    'https://stormy-sierra-07970.herokuapp.com',
+    'https://algorithmoceanbackend.herokuapp.com/',
+    'algorithmoceanbackend.herokuapp.com'
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -176,7 +182,9 @@ CSRF_COOKIE_DOMAIN = [
     'https://localhost:3000', 
     'http://10.0.0.202:3000', 
     'https://stormy-sierra-07970.herokuapp.com', 
-    'https://localhost:3000/login'
+    'https://localhost:3000/login',
+    'https://algorithmoceanbackend.herokuapp.com/',
+    'algorithmoceanbackend.herokuapp.com'
 ]
 
 CSRF_COOKIE_HTTPONLY = False
