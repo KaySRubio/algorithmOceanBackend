@@ -60,7 +60,7 @@ def help(request):
     return JsonResponse({'result': 'OK'})
 
 def db(request):
-    CustomUser = CustomUser()
-    CustomUser.save()
-    CustomUser = CustomUser.objects.all()
-    return render(request, "db.html", {"customUsers": CustomUser})
+    customUser = CustomUser()
+    customUser.save()
+    customUsers = CustomUser.objects.all()
+    return render(request, "db.html", {"customUsers": customUsers})
