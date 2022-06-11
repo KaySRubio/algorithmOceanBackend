@@ -40,4 +40,5 @@ urlpatterns = [
     path('csrf/', views.csrf),
     path('authenticateUser/', views.authenticateUser),
     path('help/', views.help),
+    path("db/", views.db, name="db"),
 ]

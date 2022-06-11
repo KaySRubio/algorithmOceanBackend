@@ -58,3 +58,9 @@ def help(request):
     print(request.META)
     request.META["CSRF_COOKIE_USED"] = True
     return JsonResponse({'result': 'OK'})
+
+def db(request):
+    CustomUser = CustomUser()
+    CustomUser.save()
+    CustomUser = CustomUser.objects.all()
+    return render(request, "db.html", {"customUsers": CustomUser})
