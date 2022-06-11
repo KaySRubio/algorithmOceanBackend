@@ -1,1 +1,1 @@
-web: gunicorn algorithmoceanbackend.wsgi
+web: gunicorn algorithmOcean.wsgi --tail
