@@ -191,6 +191,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://10.0.0.202:3000', 
     'https://stormy-sierra-07970.herokuapp.com',
     'https://stormy-sierra-07970.herokuapp.com/createaccount',
+    'https://stormy-sierra-07970.herokuapp.com/login',
     'https://algorithmoceanbackend.herokuapp.com'#,
     #'algorithmoceanbackend.herokuapp.com'
 ]
