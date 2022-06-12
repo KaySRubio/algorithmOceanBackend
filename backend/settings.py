@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -56,7 +57,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -156,9 +156,33 @@ AUTH_USER_MODEL = 'algorithmOcean.CustomUser' #new
 CSRF_COOKIE_NAME = "csrftoken"
 #CSRF_COOKIE_NAME = "CSRF_COOKIE"
 
-CORS_ALLOW_METHODS = ['GET', 'POST', 'PUT']
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
 
-CORS_ALLOW_HEADERS = ['Accept', 'Accept-Language', 'Authorization', 'Content-Type', 'X-CSRFToken']
+CORS_ALLOW_HEADERS = [
+    'Accept',
+    'Accept-Language',
+    'Authorization',
+    'Content-Type',
+    'X-CSRFToken',
+    'Access-Control-Allow-Origin'
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000', 
@@ -166,6 +190,7 @@ CORS_ALLOWED_ORIGINS = [
     'https://localhost:3000', 
     'http://10.0.0.202:3000', 
     'https://stormy-sierra-07970.herokuapp.com',
+    'https://stormy-sierra-07970.herokuapp.com/createaccount',
     'https://algorithmoceanbackend.herokuapp.com'#,
     #'algorithmoceanbackend.herokuapp.com'
 ]
