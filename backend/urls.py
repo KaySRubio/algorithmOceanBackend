@@ -24,6 +24,7 @@ router.register(r'accounts', views.Account, 'Account')
 router.register(r'customusers', views.CustomUser, 'CustomUser')
 
 urlpatterns = [
+    path('', include(router.urls)),
     path('admin/', admin.site.urls),
     #path('api/', include(router.urls)),
     #path('accounts/', include('django.contrib.auth.urls')), #new
