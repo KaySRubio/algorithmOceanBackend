@@ -38,8 +38,8 @@ def csrf(request):
     #return csrf_token
 
 #@csrf_exempt
-#def login(request):
-#    return JsonResponse({'result': 'OK'})
+def login(request):
+    return JsonResponse({'result': 'OK'})
 
 def authenticateUser(request):
     #print(request.META)
