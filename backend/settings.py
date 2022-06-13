@@ -226,6 +226,8 @@ CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_SAMESITE = 'None'
 #LOGIN_REDIRECT_URL = "/"
 
+CSRF_COOKIE_PATH = '/login'
+
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Configure Django App for Heroku
