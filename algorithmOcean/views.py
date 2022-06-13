@@ -34,7 +34,8 @@ class CustomUser(viewsets.ModelViewSet):
 def csrf(request):
     # request.set_cookie("testing","testing_token",samesite="None") # set_cookie isn't working
     csrf_token = request.META.get('CSRF_COOKIE')
-    return JsonResponse({'result': csrf_token})
+    #return JsonResponse({'result': csrf_token})
+    return csrf_token
 
 #@csrf_exempt
 #def login(request):
