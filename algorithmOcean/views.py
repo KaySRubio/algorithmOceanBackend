@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from .serializers import AccountSerializer, UserSerializer
-from .models import Account, CustomUser
+#from .models import Account, CustomUser
+from .models import CustomUser as CustomUserModel
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import ensure_csrf_cookie
@@ -10,13 +11,14 @@ from django.middleware.csrf import get_token
 from django.views.decorators.csrf import ensure_csrf_cookie, csrf_protect 
 from django.contrib.auth import authenticate
 import json 
+from django.core import serializers
 
 # Create your views here.
 #@method_decorator(csrf_exempt, name='dispatch')
 #@ensure_csrf_cookie
-class Account(viewsets.ModelViewSet):
-    serializer_class = AccountSerializer
-    queryset = Account.objects.all()
+#class Account(viewsets.ModelViewSet):
+#    serializer_class = AccountSerializer
+#    queryset = Account.objects.all()
 
 
 #@method_decorator(csrf_exempt, name='dispatch')
@@ -24,7 +26,7 @@ class Account(viewsets.ModelViewSet):
 @method_decorator(ensure_csrf_cookie, name='dispatch')
 class CustomUser(viewsets.ModelViewSet):
     serializer_class = UserSerializer
-    queryset = CustomUser.objects.all()
+    queryset = CustomUserModel.objects.all()
 
 #@method_decorator(ensure_csrf_cookie, name='dispatch')
 #def csrf(request):
@@ -42,17 +44,21 @@ def login(request):
     return JsonResponse({'result': 'OK'})
 
 def authenticateUser(request):
-    #print(request.META)
-    print(request.body)
     credentials = str(request.body).split(',') # put the request.body in a string and split into array
     username8 = credentials[0].replace('b\"username=', '').replace("\'", "")
     password8 = credentials[1].replace('password=', '').replace("\'", "").replace(" ", "").replace('\"', "")
     user = authenticate(username=username8, password=password8)
-    print('User was found: ', user)
     if user is not None:
-        print('logged in')
-        #return JsonResponse({'result': 'Logged in'})
-        return user
+        person = CustomUserModel.objects.get(username='kay88')
+        account = {}
+        account["username"] = person.username
+        account["first_name"] = person.first_name
+        account["last_name"] = person.last_name
+        account["is_active"] = person.is_active
+        account["accountType"] = person.accountType
+        account["classCode"] = person.classCode
+        print(person.username, 'logged in')
+        return JsonResponse({'result': account})
     else:
         print('not logged in')
         return JsonResponse({'result': 'NOT logged in'})

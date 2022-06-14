@@ -12,26 +12,28 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 # Configure Django App for Heroku
 import django_heroku
+import os
 
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
+BASE_DIR = Path(__file__).resolve().parent.parent # monkey, chagned this then ran migrate again, but changed back, didn't work
+#BASE_DIR = Path(__file__).resolve().parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-ihphlco8y6n^q1h3#9j-lsmb^fphx@----dco@o2kcc$t+w@6&'
-import os
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
+SECRET_KEY = 'django-insecure-ihphlco8y6n^q1h3#9j-lsmb^fphx@----dco@o2kcc$t+w@6&' # Development
+
+# SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag') # Production
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 #DEBUG = False
 
-ALLOWED_HOSTS = ['https://algorithmoceanbackend.herokuapp.com/', 'algorithmoceanbackend.herokuapp.com', 'localhost:8000', 'http://localhost:8000/']
+# Turn off ALLOWED_HOSTS for Development, turn on for Production
+#ALLOWED_HOSTS = ['https://algorithmoceanbackend.herokuapp.com/', 'algorithmoceanbackend.herokuapp.com', 'localhost:8000', 'http://localhost:8000/']
 
 
 # Application definition
@@ -65,6 +67,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR / "templates"],
+        #'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -151,7 +154,8 @@ CSRF_TRUSTED_ORIGINS = [
     #'algorithmoceanbackend.herokuapp.com'
 ]
 
-AUTH_USER_MODEL = 'algorithmOcean.CustomUser' #new
+AUTH_USER_MODEL = 'algorithmOcean.CustomUser'
+#AUTH_USER_MODEL = 'CustomUser'
 
 CSRF_COOKIE_NAME = "csrftoken"
 #CSRF_COOKIE_NAME = "CSRF_COOKIE"
@@ -183,15 +187,12 @@ CORS_ALLOW_HEADERS = [
     'x-requested-with',
 ]
 
-
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000', 
     'http://localhost', 
     'https://localhost:3000', 
     'http://10.0.0.202:3000', 
     'https://stormy-sierra-07970.herokuapp.com',
-    'https://stormy-sierra-07970.herokuapp.com/createaccount',
-    'https://stormy-sierra-07970.herokuapp.com/login',
     'https://algorithmoceanbackend.herokuapp.com'#,
     #'algorithmoceanbackend.herokuapp.com'
 ]
@@ -209,28 +210,30 @@ CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
 # Things I've tried:
 #    'algorithmoceanbackend.herokuapp.com',
 #    'stormy-sierra-07970.herokuapp.com',
-#
-
-# Things that worked in development???:
-#    'http://localhost:3000', 
-#    'http://localhost:8000', 
-#    '10.0.0.202:3000', 
-#    '10.0.0.202', 
-#    'localhost:3000', 
-#    'localhost', 
-#    'https://localhost:3000', 
-#    'http://10.0.0.202:3000', 
 #    'https://stormy-sierra-07970.herokuapp.com', 
-#    'https://localhost:3000/login',
 #    'https://algorithmoceanbackend.herokuapp.com/',
 #    'algorithmoceanbackend.herokuapp.com',
 #    '.herokuapp.com'
-#]
+
+# Things that worked in Development, turn off in Production
+CSRF_COOKIE_DOMAIN = [
+    'http://localhost:3000', 
+    'http://localhost:8000', 
+    '10.0.0.202:3000', 
+    '10.0.0.202', 
+    'localhost:3000', 
+    'localhost', 
+    'https://localhost:3000', 
+    'http://10.0.0.202:3000', 
+    'https://localhost:3000/login',
+]
 
 CSRF_COOKIE_HTTPONLY = False
-#CSRF_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = True
-CSRF_COOKIE_SAMESITE = 'None'
+#CSRF_COOKIE_SECURE = True # Production
+CSRF_COOKIE_SECURE = False # Development
+#CSRF_COOKIE_SAMESITE = 'None' # Production
+CSRF_COOKIE_SAMESITE = 'Lax' # Development
+
 SESSION_COOKIE_SAMESITE = 'None'
 SESSION_COOKIE_SECURE = True
 #LOGIN_REDIRECT_URL = "/"

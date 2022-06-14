@@ -20,7 +20,7 @@ from algorithmOcean import views
 from django.contrib.auth import views as auth_views
 
 router = routers.DefaultRouter()
-router.register(r'accounts', views.Account, 'Account')
+#router.register(r'accounts', views.Account, 'Account')
 router.register(r'customusers', views.CustomUser, 'CustomUser')
 
 urlpatterns = [
