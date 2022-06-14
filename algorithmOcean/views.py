@@ -49,7 +49,7 @@ def authenticateUser(request):
     password8 = credentials[1].replace('password=', '').replace("\'", "").replace(" ", "").replace('\"', "")
     user = authenticate(username=username8, password=password8)
     if user is not None:
-        person = CustomUserModel.objects.get(username='kay88')
+        person = CustomUserModel.objects.get(username=username8)
         account = {}
         account["username"] = person.username
         account["first_name"] = person.first_name
