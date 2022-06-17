@@ -12,6 +12,8 @@ from django.views.decorators.csrf import ensure_csrf_cookie, csrf_protect
 from django.contrib.auth import authenticate
 import json 
 from django.core import serializers
+from django.contrib.auth.forms import ReadOnlyPasswordHashField
+from django.core.exceptions import ValidationError
 
 # Create your views here.
 #@method_decorator(csrf_exempt, name='dispatch')

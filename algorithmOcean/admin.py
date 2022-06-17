@@ -1,11 +1,16 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
+from django import forms
+from django.contrib.auth.forms import ReadOnlyPasswordHashField
+from django.core.exceptions import ValidationError
 
 # Register your models here.
 from .models import Account
 from .models import Practice
 from .models import Assignment
-from .models import CustomUser #new
+from .models import CustomUser
+
+
 
 class CustomUserAdmin(UserAdmin): #new
     model = CustomUser
@@ -22,7 +27,7 @@ class AssignmentAdmin(admin.ModelAdmin):
 
 # Register your models here.
 
-admin.site.register(CustomUser) #new
+admin.site.register(CustomUser)
 admin.site.register(Account, AccountAdmin)
 admin.site.register(Practice, PracticeAdmin)
 admin.site.register(Assignment, AssignmentAdmin)

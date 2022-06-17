@@ -24,16 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent # monkey, chagned this then ra
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-ihphlco8y6n^q1h3#9j-lsmb^fphx@----dco@o2kcc$t+w@6&' # Development
+SECRET_KEY = 'django-insecure-ihphlco8y6n^q1h3#9j-lsmb^fphx@----dco@o2kcc$t+w@6&' # Development
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag') # Production
+#SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag') # Production
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 #DEBUG = False
 
 # Turn off ALLOWED_HOSTS for Development, turn on for Production
-ALLOWED_HOSTS = ['https://algorithmoceanbackend.herokuapp.com/', 'algorithmoceanbackend.herokuapp.com', 'localhost:8000', 'http://localhost:8000/']
+#ALLOWED_HOSTS = ['https://algorithmoceanbackend.herokuapp.com/', 'algorithmoceanbackend.herokuapp.com', 'localhost:8000', 'http://localhost:8000/']
 
 
 # Application definition
@@ -216,23 +216,23 @@ CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
 #    '.herokuapp.com'
 
 # Things that worked in Development, turn off in Production
-#CSRF_COOKIE_DOMAIN = [
-#    'http://localhost:3000', 
-#    'http://localhost:8000', 
-#    '10.0.0.202:3000', 
-#    '10.0.0.202', 
-#    'localhost:3000', 
-#    'localhost', 
-#    'https://localhost:3000', 
-#    'http://10.0.0.202:3000', 
-#    'https://localhost:3000/login',
-#]
+CSRF_COOKIE_DOMAIN = [
+    'http://localhost:3000', 
+    'http://localhost:8000', 
+    '10.0.0.202:3000', 
+    '10.0.0.202', 
+    'localhost:3000', 
+    'localhost', 
+    'https://localhost:3000', 
+    'http://10.0.0.202:3000', 
+    'https://localhost:3000/login',
+]
 
 CSRF_COOKIE_HTTPONLY = False
-CSRF_COOKIE_SECURE = True # Production
-#CSRF_COOKIE_SECURE = False # Development
-CSRF_COOKIE_SAMESITE = 'None' # Production
-#CSRF_COOKIE_SAMESITE = 'Lax' # Development
+#CSRF_COOKIE_SECURE = True # Production
+CSRF_COOKIE_SECURE = False # Development
+#CSRF_COOKIE_SAMESITE = 'None' # Production
+CSRF_COOKIE_SAMESITE = 'Lax' # Development
 
 SESSION_COOKIE_SAMESITE = 'None'
 SESSION_COOKIE_SECURE = True
