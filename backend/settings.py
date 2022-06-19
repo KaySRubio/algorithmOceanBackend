@@ -228,7 +228,8 @@ CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
 #    'https://localhost:3000/login',
 #]
 
-CSRF_COOKIE_HTTPONLY = False
+CSRF_COOKIE_HTTPONLY = True # temporarily turning this on
+#CSRF_COOKIE_HTTPONLY = False # temporarily turning this off
 CSRF_COOKIE_SECURE = True # Production
 #CSRF_COOKIE_SECURE = False # Development
 CSRF_COOKIE_SAMESITE = 'None' # Production
