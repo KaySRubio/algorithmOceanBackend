@@ -245,3 +245,6 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Configure Django App for Heroku
 django_heroku.settings(locals())
+
+SECURE_REFERRER_POLICY = 'unsafe-url' # new - remove if it doesn't fix safari
+SECURE_CROSS_ORIGIN_OPENER_POLICY = 'unsafe-none' # new - remove if it doesn't fix safari
