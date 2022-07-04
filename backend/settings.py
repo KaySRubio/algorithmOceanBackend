@@ -139,7 +139,8 @@ CORS_ORIGIN_WHITELIST = [
      'http://localhost:3000',
      'https://localhost:3000',
      'http://10.0.0.202:3000',
-     'https://stormy-sierra-07970.herokuapp.com',
+     # 'https://stormy-sierra-07970.herokuapp.com',
+     'https://algorithmocean.herokuapp.com',
      'https://algorithmoceanbackend.herokuapp.com/',
      #'algorithmoceanbackend.herokuapp.com'
 ]
@@ -149,7 +150,8 @@ CSRF_TRUSTED_ORIGINS = [
     'http://localhost', 
     'https://localhost:3000', 
     'http://10.0.0.202:3000', 
-    'https://stormy-sierra-07970.herokuapp.com',
+    #'https://stormy-sierra-07970.herokuapp.com',
+    'https://algorithmocean.herokuapp.com',
     'https://algorithmoceanbackend.herokuapp.com/',
     #'algorithmoceanbackend.herokuapp.com'
 ]
@@ -192,7 +194,9 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost', 
     'https://localhost:3000', 
     'http://10.0.0.202:3000', 
-    'https://stormy-sierra-07970.herokuapp.com',
+    
+    #'https://stormy-sierra-07970.herokuapp.com',
+    'https://algorithmocean.herokuapp.com',
     'https://algorithmoceanbackend.herokuapp.com'#,
     #'algorithmoceanbackend.herokuapp.com'
 ]
@@ -246,5 +250,5 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Configure Django App for Heroku
 django_heroku.settings(locals())
 
-# SECURE_REFERRER_POLICY = 'unsafe-url' # new - does not seem like the magic thingy
-# SECURE_CROSS_ORIGIN_OPENER_POLICY = 'unsafe-none' # new - seems like the magic thingy
+# SECURE_REFERRER_POLICY = 'unsafe-url' # new - does not seem like the magic thingy to fix safari
+# SECURE_CROSS_ORIGIN_OPENER_POLICY = 'unsafe-none' # new - does not seem like the magic thingy to fix safari
