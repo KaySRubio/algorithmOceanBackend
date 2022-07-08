@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .serializers import AccountSerializer, UserSerializer
-#from .models import Account, CustomUser
+from .serializers import UserSerializer, PracticeSerializer
 from .models import CustomUser as CustomUserModel
+from .models import Practice
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import ensure_csrf_cookie
@@ -14,6 +14,7 @@ import json
 from django.core import serializers
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
+from django.http import HttpResponse
 
 # Create your views here.
 #@method_decorator(csrf_exempt, name='dispatch')
@@ -45,6 +46,31 @@ def csrf(request):
 def login(request):
     return JsonResponse({'result': 'OK'})
 
+#def db(request):
+#    customUser = CustomUser()
+    # customUser.save()
+    # customUsers = CustomUser.objects.all()
+#    return render(request, "db.html", {"customUsers": customUser})
+
+
+def getpracticescores(request):
+    username = request.GET.get('username', '')
+    print(username)
+    queryset = Practice.objects.all().filter(email__email=username) # because its a foreign key must use email__email rather than just email
+    print(queryset)
+    qs_json = serializers.serialize('json', queryset)
+    return HttpResponse(qs_json, content_type='application/json')
+
+def postpracticescore(request):
+    print(request)
+    username = request.GET.get('username', '')
+    print(username)
+    algorithmName = request.GET.get('algorithmName', '')
+    print(algorithmName)
+    score = request.GET.get('score', '')
+    print(score)
+    return JsonResponse({'result': 'OK'})
+
 def authenticateUser(request):
     credentials = str(request.body).split(',') # put the request.body in a string and split into array
     username8 = credentials[0].replace('b\"username=', '').replace("\'", "")
@@ -65,13 +91,3 @@ def authenticateUser(request):
         print('not logged in')
         return JsonResponse({'result': 'NOT logged in'})
 
-def help(request):
-    print(request.META)
-    request.META["CSRF_COOKIE_USED"] = True
-    return JsonResponse({'result': 'OK'})
-
-def db(request):
-    customUser = CustomUser()
-    # customUser.save()
-    # customUsers = CustomUser.objects.all()
-    return render(request, "db.html", {"customUsers": customUser})

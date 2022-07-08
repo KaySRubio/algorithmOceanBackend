@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from .models import Account
 from .models import Practice
 from .models import Assignment
 from .models import CustomUser #new
@@ -20,11 +19,6 @@ class UserSerializer(serializers.ModelSerializer): #new
         return user    
     #def save(self, commit=True):
     #    print('CustomUser serializer save method is running with self: ', self)
-
-class AccountSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Account
-        fields = ('id', 'firstname', 'lastname', 'email', 'password', 'accountType', 'classCode')
 
 class PracticeSerializer(serializers.ModelSerializer):
     class Meta:
