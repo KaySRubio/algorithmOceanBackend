@@ -91,3 +91,7 @@ def authenticateUser(request):
         print('not logged in')
         return JsonResponse({'result': 'NOT logged in'})
 
+# new - digital ocean
+class PracticeView(viewsets.ModelViewSet):
+    serializer_class = PracticeSerializer
+    queryset = Practice.objects.all()

@@ -23,6 +23,9 @@ router = routers.DefaultRouter()
 router.register(r'customusers', views.CustomUser, 'CustomUser')
 #router.register(r'practice', views.getpracticescores, 'Practice')
 
+# new - digital ocean
+router.register(r'practices', views.PracticeView, 'practice')
+
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
@@ -31,4 +34,5 @@ urlpatterns = [
     path('authenticateUser/', views.authenticateUser),
     path('getpracticescores/', views.getpracticescores),
     path('postpracticescore/', views.postpracticescore),
+    path('api/', include(router.urls)), # new - digital ocean
 ]
