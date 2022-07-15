@@ -79,6 +79,7 @@ def authenticateUser(request):
     if user is not None:
         person = CustomUserModel.objects.get(username=username8)
         account = {}
+        account["id"] = person.id
         account["username"] = person.username
         account["first_name"] = person.first_name
         account["last_name"] = person.last_name
