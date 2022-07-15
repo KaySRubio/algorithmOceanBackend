@@ -28,8 +28,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent # monkey, chagned this then ra
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag') # Production
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#DEBUG = False
+#DEBUG = True
+DEBUG = False
 
 # Turn off ALLOWED_HOSTS for Development, turn on for Production
 ALLOWED_HOSTS = ['https://algorithmoceanbackend.herokuapp.com/', 'algorithmoceanbackend.herokuapp.com', 'localhost:8000', 'http://localhost:8000/']
