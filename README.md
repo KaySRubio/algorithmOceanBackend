@@ -19,7 +19,14 @@
 		<li>Custom Django authentication used to login users via POST request from front-end</li>
 	</ul>
 	<h2>React Front End</h2>
-	<p>Please see <a href="https://github.com/KaySRubio/algorithmOcean">front end</a></p>
+	<ul>
+		<li>Interactive lesson page has users perform algorithms on screen</li>
+		<li>Program randomly generates an array of numbers and performs the specified sort behind the scenes</li>
+		<li>User moves are compared to program moves to score the user's answer</li>
+		<li>Educational videos, directions about how to use the program, and other features available</li>
+		<li>Followed ARIA specifications for color contrast, keyboard navigation, and screen reader accessibility</li>
+	</ul>
+	<p>For details, please see <a href="https://github.com/KaySRubio/algorithmOcean">front end</a></p>
 	<h2>Future directions</h2>
 	<ul>
 		<li>Expand the site to cover more complex algorithms</li>
