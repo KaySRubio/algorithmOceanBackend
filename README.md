@@ -4,6 +4,8 @@
 <html lang="en" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark">
 
 <body>
+	<h2>To try a lesson, please visit <a href="https://algorithmocean.herokuapp.com/demo-lesson/insertion">algorithmocean.herokuapp.com</a></h2>
+	<h2>To see the backend in action, you can <a href="https://algorithmocean.herokuapp.com/createaccount">create an account</a></h2>
 	<h2>Project Description</h2>
 	<p>AlgorithmOcean is an app I created for an independent study course at Framingham State University from April - July 2022</p>
 	<h2>Purpose</h2>
